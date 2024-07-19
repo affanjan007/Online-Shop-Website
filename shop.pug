@@ -1,0 +1,244 @@
+extends base.pug
+
+block scripts 
+    script(src='/static/index.js')
+
+block style 
+    style
+        include ../static/style.css 
+        include ../static/styleshop.css
+
+block content
+    nav#navbar
+        ul 
+            div#logo
+                img(src="/static/logo.jfif", alt="")
+                p E.S
+
+            li #[a(href="/") Home]
+            li #[a(href="/shop") Shop]
+            li #[a(href="/cart") Cart]
+            li #[a(href="/contact") Help Center]
+
+    section#shop
+        h1 Shop 
+        div.cart
+            li #[a(href="/cart") View Cart]
+            img(src="/static/cart.png", alt="")
+
+        // Assign unique ids to each product slot
+        div.slot#product1
+            img(src="/static/f1.jfif", alt="")
+            p Grey Shirt
+            p Rs:8500
+            button.btn
+                h4 Add to Cart
+
+        div.slot#product2
+            img(src="/static/f2.jfif", alt="")
+            p Navy Blue Shirt
+            p Rs:8500
+            button.btn
+                h4 Add to Cart
+
+        div.slot#product3
+            img(src="/static/f3.jfif", alt="")
+            p Dark Blue Shirt
+            p Rs:8000
+            button.btn
+                h4 Add to Cart
+
+        div.slot#product4
+            img(src="/static/11.jfif", alt="")
+            p Black Shirt
+            p Rs:2000
+            button.btn
+                h4 Add to Cart
+
+        div.slot#product5
+            img(src="/static/2.jfif", alt="")
+            p Blue T-Shirt
+            p Rs:1500
+            button.btn
+                h4 Add to Cart
+
+        div.slot#product6
+            img(src="/static/4.jfif", alt="")
+            p White T-Shirt
+            p Rs:1000
+            button.btn
+                h4 Add to Cart
+
+        div.slot#product7
+            img(src="/static/p1.jfif", alt="")
+            p Denim Jeans
+            p Rs:2000
+            button.btn
+                h4 Add to Cart
+
+        div.slot#product8
+            img(src="/static/p2.jfif", alt="")
+            p Blue Jeans
+            p Rs:2500
+            button.btn
+                h4 Add to Cart
+
+        div.slot#product9
+            img(src="/static/p3.jfif", alt="")
+            p Grey Pants
+            p Rs:3000
+            button.btn
+                h4 Add to Cart
+
+        div.slot#product10
+            img(src="/static/s1.jfif", alt="")
+            p Brown Formal Shoes
+            p Rs:5000
+            button.btn
+                h4 Add to Cart
+
+        div.slot#product11
+            img(src="/static/s2.jfif", alt="")
+            p White sneakers
+            p Rs:4500
+            button.btn
+                h4 Add to Cart
+
+        div.slot#product12
+            img(src="/static/s3.jfif", alt="")
+            p Black Formal Shoes
+            p Rs:5000
+            button.btn
+                h4 Add to Cart
+
+        div.slot#product13
+            img(src="/static/w1.jfif", alt="")
+            p Rolex 
+            p Rs:25000
+            button.btn
+                h4 Add to Cart
+
+        div.slot#product14
+            img(src="/static/w2.jfif", alt="")
+            p Swatch 
+            p Rs:30000
+            button.btn
+                h4 Add to Cart
+
+        div.slot#product15
+            img(src="/static/w3.jfif", alt="")
+            p Rolex
+            p Rs:45000
+            button.btn
+                h4 Add to Cart
+
+        div.slot#product16
+            img(src="/static/l1.jfif", alt="")
+            p Brown Bag
+            p Rs:7000
+            button.btn
+                h4 Add to Cart
+
+        div.slot#product17
+            img(src="/static/l2.jfif", alt="")
+            p Black leather Bag
+            p Rs:5000
+            button.btn
+                h4 Add to Cart
+
+        div.slot#product18
+            img(src="/static/l3.jfif", alt="")
+            p Black Bag
+            p Rs:6000
+            button.btn
+                h4 Add to Cart
+
+        div.slot#product19
+            img(src="/static/b1.jfif", alt="")
+            p Black Belt 
+            p Rs:500
+            button.btn
+                h4 Add to Cart
+
+        div.slot#product20
+            img(src="/static/b2.jfif", alt="")
+            p Brown Belt
+            p Rs:400
+            button.btn
+                h4 Add to Cart
+
+        div.slot#product21
+            img(src="/static/b3.jfif", alt="")
+            p Dark Brown Belt
+            p Rs:400
+            button.btn
+                h4 Add to Cart
+
+        div.slot#product22
+            img(src="/static/r1.jfif", alt="")
+            p Silver Ring 
+            p Rs:200
+            button.btn
+                h4 Add to Cart
+
+        div.slot#product23
+            img(src="/static/r2.jfif", alt="")
+            p Rosegold Ring 
+            p Rs:300
+            button.btn
+                h4 Add to Cart
+
+        div.slot#product24
+            img(src="/static/r4.jfif", alt="")
+            p Golden Ring 
+            p Rs:400
+            button.btn
+                h4 Add to Cart
+
+    // New Footer Section
+    footer#footer
+        div.footer-content
+            div.footer-section
+                img(src="/static/logo.jfif", alt="")
+            div.footer-section
+                h3 Quick Links
+                ul
+                    li
+                        a(href="/customer-service#about-us") About Us
+                    li
+                        a(href="/customer-service#return-policy") Return Policy
+                    li
+                        a(href="/customer-service#faqs") FAQs
+                    li
+                        a(href="/customer-service#reviews") Reviews
+                    li
+                        a(href="/contact") Contact Us
+            div.footer-section
+                h3 Product Categories
+                ul
+                    li
+                        a(href="/shop#product4") Clothing
+                    li
+                        a(href="/shop#product2") Formal
+                    li
+                        a(href="/shop#product12") Footwear
+                    li
+                        a(href="/shop#product21") Accessories
+                    li
+                        a(href="/shop#product15") Watches
+                    li
+                        a(href="/shop#product18") Bags
+
+        div.copyright
+            p &copy; www.easyshop.com. All rights reserved
+            div.social-media
+                a(href="https://www.facebook.com" target="_blank")
+                    img(src="/static/fb.webp", alt="Facebook")
+                a(href="https://www.instagram.com" target="_blank")
+                    img(src="/static/ig.webp", alt="Instagram")
+                a(href="https://www.whatsapp.com" target="_blank")
+                    img(src="/static/whatsapp.webp", alt="WhatsApp")
+            
+            h4 Mail: easyshop@gmail.com
+            h4 Phone: 1231231234
+            h4 Location: 10 Street Phase 2, karachi, Pakistan
