@@ -18,4 +18,4 @@ Front-end: HTML, CSS, JavaScript, Pug
 Back-end: Node.js, Express.js
 Database: MongoDB
 Tools: Body-Parser, Mongoose, Express-Session
-Explore this project to see how I've combined modern development practices to create a feature-rich online shop platform. Visit the link below to learn more!
+Explore this project to see how I've combined modern development practices to create a feature-rich online shop platform.
