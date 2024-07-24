@@ -1,0 +1,84 @@
+extends base.pug
+
+block scripts
+    script(src='/static/index.js')
+
+block style
+    style
+        include ../static/style.css
+        include ../static/stylecheckout.css
+
+block content
+    nav#navbar
+        ul
+            div#logo
+                img(src="/static/logo.jfif", alt="")
+                p E.S
+
+            li #[a(href="/") Home]
+            li #[a(href="/shop") Shop]
+            li #[a(href="/cart") Cart]
+            li #[a(href="/contact") Help Center]
+
+    div.container
+        h1 Checkout
+
+        // Display cart items
+        ul.cart-items
+        p Delivery Charges-Rs 200
+
+        div.total-amount
+
+        form(id='contactForm', action='/checkout', method='post', class='myForm', required)
+            input(type='text', class='myInput', name='name', placeholder='Enter your name..', required)
+            input(type='phone', class='myInput', name='phone', placeholder='Enter your phone..', required)
+            input(type='email', class='myInput', name='email', placeholder='Enter your email..', required)
+            input(type='text', class='myInput', name='address', placeholder='Enter your address..', required)
+            input(type='text', class='myInput', name='city', placeholder='Enter your city..', required)
+            input(type='text', class='myInput', name='postal', placeholder='Enter your postal address..', required)
+
+            label Payment Method:
+            div
+                input(type='radio', name='paymentMethod', value='Card', required)
+                label(for='Card') Pay by Card
+                input(type='radio', name='paymentMethod', value='COD', required)
+                label(for='COD') Cash on Delivery
+
+            // Add hidden input for cart items
+            input(type="hidden", name="cartItems", id="cartItemsInput")
+
+            button.btn Submit
+
+
+        //- JavaScript for handling form submission and showing alerts
+        script.
+            document.getElementById('contactForm').addEventListener('submit', function(event) {
+                const cartItemsInput = document.getElementById('cartItemsInput');
+                cartItemsInput.value = JSON.stringify(JSON.parse(sessionStorage.getItem('cart')) || []);
+                    
+                const formData = new FormData(this);
+
+
+                fetch('/checkout', {
+                })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Network response was not ok');
+                    }
+                    return response.text();
+                })
+                .then(data => {
+                    alert("Order placed successfully");
+                    this.reset();
+                    sessionStorage.removeItem('cart'); // Clear the cart after successful submission
+                    localStorage.removeItem('cart'); // Ensure the cart is also cleared from localStorage
+                    window.location.href = '/shop';
+                })
+                .catch(error => {
+                    alert("Order failed to place");
+                    console.error('Error:', error);
+                });
+            });
+
+
+

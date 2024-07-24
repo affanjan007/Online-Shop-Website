@@ -1,0 +1,130 @@
+//- filling base template 
+
+extends base.pug
+
+block scripts 
+    script(src='/static/index.js')
+
+block style 
+    style
+        include ../static/style.css
+
+block content
+
+    nav#navbar
+        ul 
+            div#logo
+                img(src="/static/logo.jfif", alt="")
+                p E.S
+
+            li
+                a(href="#introsec") Home
+            li
+                a(href="/shop") Shop
+            li
+                a(href="/cart") Cart
+            li
+                a(href="/contact") Help Center
+
+              
+    section#introsec
+        h2 Welcome to EASYSHOP - Your Ultimate Online Shopping Destination!
+        br
+        div Style with Purpose: Embrace Fashion at EASYSHOP 
+
+    
+    section#shopsec
+      h2 Categories
+        .carousel
+            button.carousel-btn.left-btn(type="button") &lt;
+            .carousel-inner
+                each category in ['Clothing', 'Shoes', 'Trousers', 'Watches', 'Accessories', 'Bags', 'Rings', 'Belts', 'Jeans']
+                    div.card
+                        p= category
+                        img(src=`/static/${category.toLowerCase().replace(' ', '')}.jfif`, alt=category)
+            button.carousel-btn.right-btn(type="button") &gt;
+
+          
+
+    // New Featured Products Section
+    section#featuredsec
+        h2 Featured Products
+        div.card
+            p Product 1
+            a(href="/shop#product2" class="featured-link")
+                img(src="/static/f2.jfif", alt="Product 1")
+            .stars ★★★★★
+        div.card
+            p Product 2
+            a(href="/shop#product12" class="featured-link")
+                img(src="/static/s3.jfif", alt="Product 2")
+            .stars ★★★★★
+        div.card
+            p Product 3
+            a(href="/shop#product13" class="featured-link")
+                img(src="/static/w1.jfif", alt="Product 3")
+            .stars ★★★★★
+        div.card
+            p Product 4
+            a(href="/shop#product17" class="featured-link")
+                img(src="/static/l2.jfif", alt="Product 4")
+            .stars ★★★★★
+        div.card
+            p Product 5
+            a(href="/shop#product19" class="featured-link")
+                img(src="/static/b1.jfif", alt="Product 4")
+            .stars ★★★★☆
+        div.card
+            p Product 6
+            a(href="/shop#product6" class="featured-link")
+                img(src="/static/4.jfif", alt="Product 4")
+            .stars ★★★★☆
+
+   
+    // New Footer Section
+    footer#footer
+        div.footer-content
+            div.footer-section
+                img(src="/static/logo.jfif", alt="")
+            div.footer-section
+                h3 Quick Links
+                ul
+                    li
+                        a(href="/customer-service#about-us") About Us
+                    li
+                        a(href="/customer-service#return-policy") Return Policy
+                    li
+                        a(href="/customer-service#faqs") FAQs
+                    li
+                        a(href="/customer-service#reviews") Reviews
+                    li
+                        a(href="/contact") Contact Us
+            div.footer-section
+                h3 Product Categories
+                ul
+                    li
+                        a(href="/shop#product4") Clothing
+                    li
+                        a(href="/shop#product2") Formal
+                    li
+                        a(href="/shop#product12") Footwear
+                    li
+                        a(href="/shop#product21") Accessories
+                    li
+                        a(href="/shop#product15") Watches
+                    li
+                        a(href="/shop#product18") Bags
+
+        div.copyright
+            p &copy; www.easyshop.com. All rights reserved
+            div.social-media
+                a(href="https://www.facebook.com" target="_blank")
+                    img(src="/static/fb.webp", alt="Facebook")
+                a(href="https://www.instagram.com" target="_blank")
+                    img(src="/static/ig.webp", alt="Instagram")
+                a(href="https://www.whatsapp.com" target="_blank")
+                    img(src="/static/whatsapp.webp", alt="WhatsApp")
+            
+            h4 Mail: easyshop@gmail.com
+            h4 Phone: 1231231234
+            h4 Location: 10 Street Phase 2, karachi, Pakistan
